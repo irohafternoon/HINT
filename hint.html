@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヒントページ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .accordion {
+            background-color: #f4f4f4;
+            color: #444;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            transition: 0.4s;
+        }
+
+        .accordion.active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .panel p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ヒントページ</h1>
+
+<button class="accordion">ヒント0</button>
+<div class="panel">
+    <p>さすがに比較的小さい子供でも楽しめるものです。</p>
+</div>
+
+<button class="accordion">ヒント1</button>
+<div class="panel">
+    <p>有名なアニメが関連します。</p>
+</div>
+
+<button class="accordion">ヒント2</button>
+<div class="panel">
+    <p>なぜ100%ではないか、が鍵になります。</p>
+</div>
+
+<button class="accordion">ヒント3</button>
+<div class="panel">
+    <p>「"500%"　アニメ」 で検索してみましょう。</p>
+</div>
+
+<button class="accordion">ヒント4</button>
+<div class="panel">
+    <p>五等分の花嫁と関係しています。</p>
+</div>
+
+<button class="accordion">ヒント5</button>
+<div class="panel">
+    <p>形状からして一般的なコミックではなさそうですね。</p>
+</div>
+
+<button class="accordion">ヒント6</button>
+<div class="panel">
+    <p>絵本です。</p>
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
